@@ -15,8 +15,8 @@ use Illuminate\Http\Request;
 
 Route::post('register', 'API\AuthController@register');
 Route::post('login', 'API\AuthController@login');
-Route::post('add-renters', 'AppController@add_renter');
-Route::get('get-renter', 'AppController@get_renter');
 
 Route::middleware('auth:api')->group( function () {
+    Route::post('add-renter', 'AppController@add_renter');
+    Route::get('get-renter', 'AppController@get_renter');
 });

@@ -28,6 +28,8 @@ class CreateRentersTable extends Migration
             $table->string('city');
             $table->string('country');
             $table->integer('zipcode');
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
         });
     }
 

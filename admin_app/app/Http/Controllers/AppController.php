@@ -32,7 +32,7 @@ class AppController extends BaseController
 
         $renter = Renter::create($input);
 
-        return $this->sendResponse($renter->toArray(), 'Product created successfully.');
+        return $this->sendResponse($renter->toArray(), 'Renter created successfully.');
     }
 
     /**
@@ -44,7 +44,7 @@ class AppController extends BaseController
     public function get_renter(Request $request)
     {
         $input = $request->header('name') ;
-        $renter = DB::table('renters')->where('name',$input)->get() ;
+        $renter = Renter::where('name', $input)->first();
 
         if (is_null($renter)) {
             return $this->sendError('Renter not found.');
