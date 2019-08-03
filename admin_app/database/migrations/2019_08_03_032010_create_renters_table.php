@@ -17,7 +17,8 @@ class CreateRentersTable extends Migration
             $table->increments('renterid');
             $table->string('name');
             $table->integer('nid')->nullable();
-            $table->string('passport')->nullable();;
+            $table->string('passport')->nullable();
+            $table->string('profile_image_link')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile_number');
             $table->string('nationality');
