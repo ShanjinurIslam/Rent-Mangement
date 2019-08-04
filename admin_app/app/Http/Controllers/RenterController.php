@@ -10,7 +10,7 @@ use Validator;
 
 class AppController extends BaseController
 {
-    public function add_renter(Request $request)
+    public function create(Request $request)
     {
         $input = $request->all();
 
@@ -41,7 +41,7 @@ class AppController extends BaseController
      * @param  \App\Renter  $renter
      * @return \Illuminate\Http\Response
      */
-    public function get_renter(Request $request)
+    public function get(Request $request)
     {
         $input = $request->header('name') ;
         $renter = Renter::where('name', $input)->first();
@@ -53,7 +53,7 @@ class AppController extends BaseController
         return $this->sendResponse($renter, 'Renter retrieved successfully.');
     }
 
-    public function update_renter(Request $request, Renter $renter)
+    public function update(Request $request, Renter $renter)
     {
         $input = $request->all();
         $validator = Validator::make($input, [
@@ -78,7 +78,7 @@ class AppController extends BaseController
         return $this->sendResponse($renter->toArray(), 'Product updated successfully.');
     }
 
-    public function destroy_renter(Renter $renter)
+    public function destroy(Renter $renter)
     {
         $renter->delete() ;
         return $this->sendResponse($product->toArray(), 'Renter deleted successfully.');
