@@ -16,11 +16,11 @@ class CreatePaymentDetailsTable extends Migration
         Schema::create('payment_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('invoice_id')->unsigned()->default(12);
-            $table->string('payment_type', 100)->default('text');
-            $table->string('bank_name', 100)->nullable()->default('text');
-            $table->integer('cheque_number')->unsigned()->nullable()->default(12);
-            $table->float('paid_amount')->default(123.45);
-            $table->float('due_amount')->nullable()->default(123.45);
+            $table->string('payment_type', 100)->default('cash');
+            $table->string('bank_name', 100)->nullable()->default('');
+            $table->integer('cheque_number')->unsigned()->nullable()->default(-1);
+            $table->float('paid_amount')->default(0.0);
+            $table->float('due_amount')->nullable()->default(0.0);
             $table->timestamps();
         });
     }

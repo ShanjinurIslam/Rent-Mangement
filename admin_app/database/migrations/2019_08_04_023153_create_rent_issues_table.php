@@ -15,14 +15,14 @@ class CreateRentIssuesTable extends Migration
     {
         Schema::create('rent_issues', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('renter_id')->unsigned()->default(12);
+            $table->integer('renter_id')->unsigned()->default(0);
             $table->foreign('renter_id')->references('id')->on('renters')->onDelete('cascade');
-            $table->integer('flat_id')->unsigned()->default(12);
+            $table->integer('flat_id')->unsigned()->default(0);
             $table->foreign('flat_id')->references('id')->on('flats')->onDelete('cascade');
-            $table->integer('start_month')->unsigned()->default(12);
-            $table->integer('start_year')->unsigned()->default(12);
-            $table->float('initial_rent')->default(123.45);
-            $table->float('increase_per_year')->nullable()->default(123.45);
+            $table->integer('start_month')->unsigned()->default(0);
+            $table->integer('start_year')->unsigned()->default(0);
+            $table->float('initial_rent')->default(0.0);
+            $table->float('increase_per_year')->nullable()->default(0.0);
             $table->timestamps();
         });
     }

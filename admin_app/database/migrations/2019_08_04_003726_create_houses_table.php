@@ -15,11 +15,11 @@ class CreateHousesTable extends Migration
     {
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('house_name', 100)->default('text');
-            $table->string('address_line_1', 100)->default('text');
-            $table->string('address_line_2', 100)->nullable()->default('text');
-            $table->string('city', 100)->nullable()->default('text');
-            $table->string('country', 100)->nullable()->default('text');
+            $table->string('house_name', 100)->default('');
+            $table->string('address_line_1', 100)->default('');
+            $table->string('address_line_2', 100)->nullable()->default('');
+            $table->string('city', 100)->nullable()->default('');
+            $table->string('country', 100)->nullable()->default('');
             $table->integer('zipcode')->unsigned()->default(12);
             $table->timestamps();
         });

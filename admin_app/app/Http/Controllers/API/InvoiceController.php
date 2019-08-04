@@ -39,16 +39,14 @@ class InvoiceController extends BaseController
     {
         $input = $request->all() ;
 
-        $validator = Validator::make($request, [
-            'renter_id'=>'required',
-            'flat_id'=>'required',
+        $validator = Validator::make($input, [
+            'rent_issue_id'=>'required',
             'month'=>'required',
             'year'=>'required',
             'electricity_bill'=>'required',
             'gas_bill'=>'required',
             'water_bill'=>'required',
             'service_charge'=>'required',
-            'electricity_bill'=>'required',
             'previous_due'=>'required',
             'total_payable'=>'required'
         ]);

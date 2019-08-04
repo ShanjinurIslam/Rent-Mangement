@@ -15,9 +15,9 @@ class CreateFlatsTable extends Migration
     {
         Schema::create('flats', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('house_id')->unsigned()->default(12);;
+            $table->integer('house_id')->unsigned()->default(0);;
             $table->foreign('house_id')->references('id')->on('houses')->onDelete('cascade');
-            $table->string('flat_name', 100)->default('text');
+            $table->string('flat_name', 100)->default('');
             $table->boolean('vacancy_status')->default(true);
             $table->timestamps();
         });
