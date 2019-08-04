@@ -14,10 +14,11 @@ class CreateRentersTable extends Migration
     public function up()
     {
         Schema::create('renters', function (Blueprint $table) {
-            $table->increments('renterid');
+            $table->increments('id');
             $table->string('name');
             $table->integer('nid')->nullable();
-            $table->string('passport')->nullable();;
+            $table->string('passport')->nullable();
+            $table->string('profile_image_link')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile_number');
             $table->string('nationality');
@@ -27,6 +28,7 @@ class CreateRentersTable extends Migration
             $table->string('city');
             $table->string('country');
             $table->integer('zipcode');
+            $table->timestamps();
         });
     }
 

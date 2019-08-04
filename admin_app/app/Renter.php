@@ -12,6 +12,6 @@ class Renter extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'nid','passport','email','mobile_number','nationality','gender','address_line_1','address_line_2','city','country','zipcode'
+        'name', 'nid','passport','email','mobile_number','nationality','gender','address_line_1','address_line_2','city','country','zipcode','updated_at','created_at'
     ];
 }
