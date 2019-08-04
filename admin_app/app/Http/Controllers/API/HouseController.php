@@ -61,9 +61,16 @@ class HouseController extends BaseController
      * @param  \App\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function get(Request $request)
     {
-        //
+        $input = $request->header('house_name') ;
+        $house = House::where('house_name', $input)->first();
+
+        if (is_null($house)) {
+            return $this->sendError('House not found.');
+        }
+
+        return $this->sendResponse($house, 'Renter retrieved successfully.');
     }
 
     /**
