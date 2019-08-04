@@ -14,7 +14,7 @@ class CreateRentersTable extends Migration
     public function up()
     {
         Schema::create('renters', function (Blueprint $table) {
-            $table->increments('renterid');
+            $table->increments('id');
             $table->string('name');
             $table->integer('nid')->nullable();
             $table->string('passport')->nullable();
