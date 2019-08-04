@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Renter;
-use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use Validator;

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\House;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController as BaseController;
+use Validator;
 
-class HouseController extends Controller
+class HouseController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +37,22 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'house_name'=>'required',
+            'address_line_1'=>'required',
+            'city'=>'required',
+            'country'=>'required',
+            'zipcode'=>'required',
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        $house = House::create($input);
+
+        return $this->sendResponse($house->toArray(), 'House created successfully.');
     }
 
     /**
