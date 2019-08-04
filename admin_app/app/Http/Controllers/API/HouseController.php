@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Invoice;
+use App\House;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController as BaseController;
+use Validator;
 
-class InvoiceController extends Controller
+class HouseController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -35,16 +37,31 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'house_name'=>'required',
+            'address_line_1'=>'required',
+            'city'=>'required',
+            'country'=>'required',
+            'zipcode'=>'required',
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        $house = House::create($input);
+
+        return $this->sendResponse($house->toArray(), 'House created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Invoice  $invoice
+     * @param  \App\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function show(Invoice $invoice)
+    public function show(House $house)
     {
         //
     }
@@ -52,10 +69,10 @@ class InvoiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Invoice  $invoice
+     * @param  \App\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function edit(Invoice $invoice)
+    public function edit(House $house)
     {
         //
     }
@@ -64,10 +81,10 @@ class InvoiceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Invoice  $invoice
+     * @param  \App\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Invoice $invoice)
+    public function update(Request $request, House $house)
     {
         //
     }
@@ -75,10 +92,10 @@ class InvoiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Invoice  $invoice
+     * @param  \App\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Invoice $invoice)
+    public function destroy(House $house)
     {
         //
     }

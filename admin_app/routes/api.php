@@ -17,7 +17,7 @@ Route::post('register', 'API\AuthController@register');
 Route::post('login', 'API\AuthController@login');
 
 Route::middleware('auth:api')->group( function () {
-    Route::post('add-renter', 'RenterController@store');
-    Route::get('get-renter', 'RenterController@get');
-    Route::post('add-house', 'HouseController@store');
+    Route::post('add-renter', 'API\RenterController@store');
+    Route::get('get-renter', 'API\RenterController@get');
+    Route::post('add-house', 'API\HouseController@store');
 });

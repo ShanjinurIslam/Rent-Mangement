@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Flat;
+use App\PaymentDetails;
 use Illuminate\Http\Request;
 
-class FlatController extends Controller
+class PaymentDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class FlatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Flat  $flat
+     * @param  \App\PaymentDetails  $paymentDetails
      * @return \Illuminate\Http\Response
      */
-    public function show(Flat $flat)
+    public function show(PaymentDetails $paymentDetails)
     {
         //
     }
@@ -52,10 +52,10 @@ class FlatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Flat  $flat
+     * @param  \App\PaymentDetails  $paymentDetails
      * @return \Illuminate\Http\Response
      */
-    public function edit(Flat $flat)
+    public function edit(PaymentDetails $paymentDetails)
     {
         //
     }
@@ -64,10 +64,10 @@ class FlatController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Flat  $flat
+     * @param  \App\PaymentDetails  $paymentDetails
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Flat $flat)
+    public function update(Request $request, PaymentDetails $paymentDetails)
     {
         //
     }
@@ -75,10 +75,10 @@ class FlatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Flat  $flat
+     * @param  \App\PaymentDetails  $paymentDetails
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Flat $flat)
+    public function destroy(PaymentDetails $paymentDetails)
     {
         //
     }

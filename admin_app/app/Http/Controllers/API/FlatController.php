@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\House;
+use App\Flat;
 use Illuminate\Http\Request;
-use App\Http\Controllers\API\BaseController as BaseController;
-use Validator;
 
-class HouseController extends BaseController
+class FlatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,31 +35,16 @@ class HouseController extends BaseController
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $validator = Validator::make($input, [
-            'house_name'=>'required',
-            'address_line_1'=>'required',
-            'city'=>'required',
-            'country'=>'required',
-            'zipcode'=>'required',
-        ]);
-
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
-
-        $house = House::create($input);
-
-        return $this->sendResponse($house->toArray(), 'House created successfully.');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\House  $house
+     * @param  \App\Flat  $flat
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function show(Flat $flat)
     {
         //
     }
@@ -69,10 +52,10 @@ class HouseController extends BaseController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\House  $house
+     * @param  \App\Flat  $flat
      * @return \Illuminate\Http\Response
      */
-    public function edit(House $house)
+    public function edit(Flat $flat)
     {
         //
     }
@@ -81,10 +64,10 @@ class HouseController extends BaseController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\House  $house
+     * @param  \App\Flat  $flat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, House $house)
+    public function update(Request $request, Flat $flat)
     {
         //
     }
@@ -92,10 +75,10 @@ class HouseController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\House  $house
+     * @param  \App\Flat  $flat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(House $house)
+    public function destroy(Flat $flat)
     {
         //
     }

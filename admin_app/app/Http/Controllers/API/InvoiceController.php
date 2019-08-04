@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\PaymentDetails;
+use App\Invoice;
 use Illuminate\Http\Request;
 
-class PaymentDetailsController extends Controller
+class InvoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PaymentDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\PaymentDetails  $paymentDetails
+     * @param  \App\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
-    public function show(PaymentDetails $paymentDetails)
+    public function show(Invoice $invoice)
     {
         //
     }
@@ -52,10 +52,10 @@ class PaymentDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\PaymentDetails  $paymentDetails
+     * @param  \App\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
-    public function edit(PaymentDetails $paymentDetails)
+    public function edit(Invoice $invoice)
     {
         //
     }
@@ -64,10 +64,10 @@ class PaymentDetailsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PaymentDetails  $paymentDetails
+     * @param  \App\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PaymentDetails $paymentDetails)
+    public function update(Request $request, Invoice $invoice)
     {
         //
     }
@@ -75,10 +75,10 @@ class PaymentDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\PaymentDetails  $paymentDetails
+     * @param  \App\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PaymentDetails $paymentDetails)
+    public function destroy(Invoice $invoice)
     {
         //
     }
