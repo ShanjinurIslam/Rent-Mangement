@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Flat;
+use App\House;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController as BaseController;
+use Validator;
 
-class FlatController extends Controller
+class FlatController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +38,37 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = array(
+                "flat_name" => "",
+                "house_id" => 0,
+                "vacancy_status" => false,
+            );
+
+        $input['flat_name']=$request['flat_name'];
+        $house = House::where('house_name', $request['house_name'])->first();
+        $input['house_id']= $house['id'];
+
+        print($input['house_id']);
+
+        $flat = Flat::create($input);
+
+        return $this->sendResponse($flat->toArray(), 'Flat created successfully.');
+    }
+
+    public function get(Request $request){
+        $input = $request->header('house_name') ;
+        $house = House::where('house_name', $input)->first();
+
+        if (is_null($house)) {
+            return $this->sendError('House not found.');
+        }
+
+        $flat = Flat::where('house_id', $house['id'])->where('flat_name', $request->header('flat_name'))->first();
+
+        if (is_null($flat)) {
+            return $this->sendError('Flat not found.');
+        }
+        return $this->sendResponse($flat->toArray(), 'Flat retrieved successfully.');
     }
 
     /**
@@ -46,7 +79,7 @@ class FlatController extends Controller
      */
     public function show(Flat $flat)
     {
-        //
+
     }
 
     /**
