@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use Validator;
 
-class AppController extends BaseController
+class RenterController extends BaseController
 {
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $input = $request->all();
 
