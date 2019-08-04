@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class PaymentDetails extends Model
 {
     protected $fillable = [
-        'payment_type','bank_name','check_number','paid_amount'
+        'invoice_id','payment_type','bank_name','cheque_number','paid_amount','due_amount'
     ];
 }

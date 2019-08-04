@@ -23,4 +23,6 @@ Route::middleware('auth:api')->group( function () {
     Route::get('get-house', 'API\HouseController@get');
     Route::post('add-flat', 'API\FlatController@store');
     Route::get('get-flat', 'API\FlatController@get');
+    Route::post('add-rent', 'API\RentIssueController@store');
+    Route::post('add-payment', 'API\PaymentDetailsController@store');
 });

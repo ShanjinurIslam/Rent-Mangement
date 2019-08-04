@@ -18,7 +18,7 @@ class CreatePaymentDetailsTable extends Migration
             $table->integer('invoice_id')->unsigned()->default(12);
             $table->string('payment_type', 100)->default('text');
             $table->string('bank_name', 100)->nullable()->default('text');
-            $table->integer('check_number')->unsigned()->nullable()->default(12);
+            $table->integer('cheque_number')->unsigned()->nullable()->default(12);
             $table->float('paid_amount')->default(123.45);
             $table->float('due_amount')->nullable()->default(123.45);
             $table->timestamps();

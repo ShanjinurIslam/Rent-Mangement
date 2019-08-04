@@ -4,8 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\RentIssue;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController as BaseController;
+use Validator;
 
-class RentIssueController extends Controller
+class RentIssueController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +37,24 @@ class RentIssueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'renter_id'=>'required',
+            'flat_id'=>'required',
+            'start_month'=>'required',
+            'start_year'=>'required',
+            'initial_rent'=>'required',
+            'increase_per_year'=>'required',
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        $rentIssue = RentIssue::create($input);
+
+        return $this->sendResponse($rentIssue->toArray(), 'rent_issue created successfully.');
+
     }
 
     /**
@@ -46,7 +65,7 @@ class RentIssueController extends Controller
      */
     public function show(RentIssue $rentIssue)
     {
-        //
+
     }
 
     /**

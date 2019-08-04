@@ -4,8 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\PaymentDetails;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController as BaseController;
+use Validator;
 
-class PaymentDetailsController extends Controller
+class PaymentDetailsController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +37,21 @@ class PaymentDetailsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'invoice_id'=>'required',
+            'payment_type'=>'required',
+            'paid_amount'=>'required',
+            'due_amount'=>'required',
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        $paymentDetails = PaymentDetails::create($input);
+
+        return $this->sendResponse($paymentDetails->toArray(), 'rent_issue created successfully.');
     }
 
     /**

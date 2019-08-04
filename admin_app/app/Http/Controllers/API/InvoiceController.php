@@ -4,8 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\Invoice;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController as BaseController;
+use Validator;
 
-class InvoiceController extends Controller
+class InvoiceController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +37,30 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all() ;
+
+        $validator = Validator::make($request, [
+            'renter_id'=>'required',
+            'flat_id'=>'required',
+            'month'=>'required',
+            'year'=>'required',
+            'electricity_bill'=>'required',
+            'gas_bill'=>'required',
+            'water_bill'=>'required',
+            'service_charge'=>'required',
+            'electricity_bill'=>'required',
+            'previous_due'=>'required',
+            'total_payable'=>'required'
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        $invoice = Invoice::create($input);
+
+        return $this->sendResponse($invoice->toArray(), 'Invoice created successfully.');
+
     }
 
     /**

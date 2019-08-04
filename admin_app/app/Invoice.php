@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     protected $fillable = [
-        'month','year','electricity_bill','gas_bill','water_bill','electricity_bill','service_charge','previous_due'
+        'rent_issue_id','month','year','electricity_bill','gas_bill','water_bill','service_charge','previous_due','total_payable'
     ];
 }
