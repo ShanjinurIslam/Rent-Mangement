@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
 options: "4574adb561ebf88c3a29745ecb257308"
-build_time: [1564939045, 998049000]
+build_time: [1564982507, 800248000]
 inputs:
   "/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/macos/ExampleWindow.swift": [1564799186, 790000000]
   "/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/macos/AppDelegate.swift": [1564799186, 790000000]
-  "/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/macos/Flutter/GeneratedPluginRegistrant.swift": [1564939031, 690000000]
+  "/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/macos/Flutter/GeneratedPluginRegistrant.swift": [1564982494, 520000000]

@@ -47,7 +47,7 @@ class AfterSplash extends StatelessWidget {
             left: MediaQuery.of(context).size.width / 3,
             child: Text(
               'Sign In',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
             ),
           ),
           Positioned(
@@ -84,7 +84,7 @@ class AfterSplash extends StatelessWidget {
             left: MediaQuery.of(context).size.width / 3,
             child: InkWell(
               onTap: () {
-                print('object');
+                Navigator.pushReplacementNamed(context, '/home');
               },
               child: Container(
                 height: 55,

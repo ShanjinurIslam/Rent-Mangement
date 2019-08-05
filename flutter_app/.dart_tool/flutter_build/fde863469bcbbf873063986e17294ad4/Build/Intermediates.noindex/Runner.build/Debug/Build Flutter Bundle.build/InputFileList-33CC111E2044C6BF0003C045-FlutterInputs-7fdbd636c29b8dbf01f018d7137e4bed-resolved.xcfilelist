@@ -182,6 +182,7 @@
 /Users/spondon/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.5.5/lib/src/span_mixin.dart
 /Users/spondon/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.5.5/lib/src/span_with_context.dart
 /Users/spondon/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.5.5/lib/src/utils.dart
+/Users/spondon/flutter/.pub-cache/hosted/pub.dartlang.org/splashscreen-1.2.0/lib/splashscreen.dart
 /Users/spondon/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib/src/chain.dart
 /Users/spondon/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib/src/frame.dart
 /Users/spondon/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib/src/lazy_chain.dart
@@ -982,6 +983,6 @@
 /Users/spondon/flutter/packages/flutter_tools/lib/src/build_system/targets/macos.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/main.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/routes.dart
+/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/home_ui.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/login/login.dart
-/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/login/splash.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/macos/Runner.xcodeproj/project.pbxproj
