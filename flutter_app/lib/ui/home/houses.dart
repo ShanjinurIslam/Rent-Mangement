@@ -138,13 +138,35 @@ class House {
                         right: 0,
                         child: Container(
                           margin: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              Text('ID'),
-                              Text('House Name'),
-                              Text('Address')
+                              Text(
+                                'ID',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13.0),
+                              ),
+                              Text(
+                                'House Name',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13.0),
+                              ),
+                              Text(
+                                'Address',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13.0),
+                              ),
+                              SizedBox(
+                                width: 0,
+                              )
                             ],
                           ),
                           height: 50,
@@ -162,7 +184,7 @@ class House {
                               return Container(
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     Text('1'),
@@ -172,6 +194,7 @@ class House {
                                   ],
                                 ),
                                 margin: EdgeInsets.all(10),
+                                padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: MediaQuery.of(context).size.width * .3,
                                 decoration: BoxDecoration(
