@@ -1,3 +1,4 @@
+import 'package:example_flutter/ui/home/flats.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'houses.dart';
@@ -20,12 +21,10 @@ class HomeScreenState extends State<HomeScreen> {
         );
         break;
       case 1:
-        return House.getView(context);
+        return new House();
         break;
       case 2:
-        return Center(
-          child: Text('flat'),
-        );
+        return new Flat();
         break;
       case 3:
         return Center(
@@ -51,8 +50,17 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: CupertinoNavigationBar(
         backgroundColor: Colors.green,
+        trailing: GestureDetector(
+          child: Icon(
+            Icons.power_settings_new,
+            color: Colors.white,
+          ),
+          onTap: () {
+            Navigator.pushReplacementNamed(context, '/');
+          },
+        ),
         middle: Text(
-          'Dashboard',
+          'Rent Manager',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
         ),
       ),

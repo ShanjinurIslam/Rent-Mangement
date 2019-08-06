@@ -1,8 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class House {
-  static Widget getView(BuildContext context) {
+class House extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return HouseState();
+  }
+}
+
+class HouseState extends State<House> {
+  @override
+  Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
         Positioned(
@@ -190,7 +198,7 @@ class House {
                                     Text('1'),
                                     Text('Silverleaf'),
                                     Text(
-                                        'House #25,Road #15,\nSector #04,\nUttara,\nDhaka')
+                                        'House #25,Road #15,\nSector #04,\nUttara,Dhaka')
                                   ],
                                 ),
                                 margin: EdgeInsets.all(10),

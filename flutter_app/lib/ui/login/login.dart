@@ -12,7 +12,7 @@ class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      seconds: 3,
+      seconds: 1,
       navigateAfterSeconds: new AfterSplash(),
       loadingText: Text('Setting up'),
       title: new Text(
