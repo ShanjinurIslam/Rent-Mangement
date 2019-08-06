@@ -983,6 +983,12 @@
 /Users/spondon/flutter/packages/flutter_tools/lib/src/build_system/targets/macos.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/main.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/routes.dart
+/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/dashboard.dart
+/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/flats.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/home_ui.dart
+/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/houses.dart
+/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/invoices.dart
+/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/payments.dart
+/Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/home/renters.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/lib/ui/login/login.dart
 /Volumes/PortableSSD/Projects/Development/rent_management/flutter_app/macos/Runner.xcodeproj/project.pbxproj

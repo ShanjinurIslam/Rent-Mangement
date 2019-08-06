@@ -118,64 +118,6 @@ class AfterSplash extends StatelessWidget {
               ),
             ),
           ),
-          /*Positioned(
-            top: MediaQuery.of(context).size.height / 3.3,
-            left: MediaQuery.of(context).size.width / 3,
-            child: ,
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height / 2.75,
-            left: MediaQuery.of(context).size.width / 3,
-            child: SizedBox(
-                height: 55,
-                width: 275,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelStyle: TextStyle(fontSize: 14),
-                    labelText: 'Username',
-                  ),
-                )),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height / 2.25,
-            left: MediaQuery.of(context).size.width / 3,
-            child: ,
-          Positioned(
-            top: MediaQuery.of(context).size.height / 1.80,
-            left: MediaQuery.of(context).size.width / 3,
-            child: InkWell(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/home');
-              },
-              child: Container(
-                height: 55,
-                width: 275,
-                color: Colors.black,
-                child: Center(
-                  child: Text('Log In', style: TextStyle(color: Colors.white)),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height / 1.50,
-            left: MediaQuery.of(context).size.width / 3,
-            child: InkWell(
-              onTap: () {
-                print('object');
-              },
-              child: Container(
-                height: 55,
-                width: 275,
-                color: Colors.blue,
-                child: Center(
-                  child: Text('Create Account',
-                      style: TextStyle(color: Colors.white)),
-                ),
-              ),
-            ),
-          )*/
         ],
       ),
     );

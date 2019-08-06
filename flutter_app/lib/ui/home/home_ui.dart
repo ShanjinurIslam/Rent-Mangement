@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'houses.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,9 +20,7 @@ class HomeScreenState extends State<HomeScreen> {
         );
         break;
       case 1:
-        return Center(
-          child: Text('house'),
-        );
+        return House.getView(context);
         break;
       case 2:
         return Center(
@@ -354,7 +353,15 @@ class HomeScreenState extends State<HomeScreen> {
             left: 0,
             width: 200,
           ),
-          loadUI(),
+          Positioned(
+            top: 0,
+            left: 200,
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width - 200,
+              child: loadUI(),
+            ),
+          )
         ],
       ),
     );
