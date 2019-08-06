@@ -42,13 +42,86 @@ class AfterSplash extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
             ),
           ),
-          Positioned(
+          Align(
+            alignment: Alignment.center,
+            child: SizedBox(
+              height: 400,
+              width: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Sign In',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  SizedBox(
+                      height: 55,
+                      width: 275,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          labelStyle: TextStyle(fontSize: 14),
+                          labelText: 'Username',
+                        ),
+                      )),
+                  SizedBox(
+                      height: 55,
+                      width: 275,
+                      child: TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          labelStyle: TextStyle(fontSize: 14),
+                          labelText: 'Password',
+                        ),
+                      )),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/home');
+                    },
+                    child: Container(
+                      height: 55,
+                      width: 275,
+                      color: Colors.black,
+                      child: Center(
+                        child: Text('Log In',
+                            style: TextStyle(color: Colors.white)),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('object');
+                    },
+                    child: Container(
+                      height: 55,
+                      width: 275,
+                      color: Colors.blue,
+                      child: Center(
+                        child: Text('Create Account',
+                            style: TextStyle(color: Colors.white)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          /*Positioned(
             top: MediaQuery.of(context).size.height / 3.3,
             left: MediaQuery.of(context).size.width / 3,
-            child: Text(
-              'Sign In',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
-            ),
+            child: ,
           ),
           Positioned(
             top: MediaQuery.of(context).size.height / 2.75,
@@ -67,18 +140,7 @@ class AfterSplash extends StatelessWidget {
           Positioned(
             top: MediaQuery.of(context).size.height / 2.25,
             left: MediaQuery.of(context).size.width / 3,
-            child: SizedBox(
-                height: 55,
-                width: 275,
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelStyle: TextStyle(fontSize: 14),
-                    labelText: 'Password',
-                  ),
-                )),
-          ),
+            child: ,
           Positioned(
             top: MediaQuery.of(context).size.height / 1.80,
             left: MediaQuery.of(context).size.width / 3,
@@ -113,7 +175,7 @@ class AfterSplash extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          )*/
         ],
       ),
     );
