@@ -9,6 +9,44 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  int index = 0;
+
+  Widget loadUI() {
+    switch (index) {
+      case 0:
+        return Center(
+          child: Text('dashboard'),
+        );
+        break;
+      case 1:
+        return Center(
+          child: Text('house'),
+        );
+        break;
+      case 2:
+        return Center(
+          child: Text('flat'),
+        );
+        break;
+      case 3:
+        return Center(
+          child: Text('renter'),
+        );
+        break;
+      case 4:
+        return Center(
+          child: Text('invoice'),
+        );
+        break;
+      case 5:
+        return Center(
+          child: Text('payment'),
+        );
+        break;
+      default:
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,10 +98,16 @@ class HomeScreenState extends State<HomeScreen> {
                     top: 75,
                     left: 0,
                     child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          index = 0;
+                        });
+                      },
                       child: Container(
                         height: 60,
                         width: 200,
-                        color: Color.fromRGBO(87, 96, 113, 1),
+                        color:
+                            index == 0 ? Color.fromRGBO(87, 96, 113, 1) : null,
                         child: Center(
                           child: Stack(
                             children: <Widget>[
@@ -97,9 +141,16 @@ class HomeScreenState extends State<HomeScreen> {
                     top: 135,
                     left: 0,
                     child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          index = 1;
+                        });
+                      },
                       child: Container(
                         height: 60,
                         width: 200,
+                        color:
+                            index == 1 ? Color.fromRGBO(87, 96, 113, 1) : null,
                         child: Center(
                             child: Stack(
                           children: <Widget>[
@@ -132,9 +183,16 @@ class HomeScreenState extends State<HomeScreen> {
                     top: 195,
                     left: 0,
                     child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          index = 2;
+                        });
+                      },
                       child: Container(
                         height: 60,
                         width: 200,
+                        color:
+                            index == 2 ? Color.fromRGBO(87, 96, 113, 1) : null,
                         child: Center(
                             child: Stack(
                           children: <Widget>[
@@ -167,9 +225,16 @@ class HomeScreenState extends State<HomeScreen> {
                     top: 255,
                     left: 0,
                     child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          index = 3;
+                        });
+                      },
                       child: Container(
                         height: 60,
                         width: 200,
+                        color:
+                            index == 3 ? Color.fromRGBO(87, 96, 113, 1) : null,
                         child: Center(
                             child: Stack(
                           children: <Widget>[
@@ -202,9 +267,16 @@ class HomeScreenState extends State<HomeScreen> {
                     top: 315,
                     left: 0,
                     child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          index = 4;
+                        });
+                      },
                       child: Container(
                         height: 60,
                         width: 200,
+                        color:
+                            index == 4 ? Color.fromRGBO(87, 96, 113, 1) : null,
                         child: Center(
                             child: Stack(
                           children: <Widget>[
@@ -237,9 +309,16 @@ class HomeScreenState extends State<HomeScreen> {
                     top: 375,
                     left: 0,
                     child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          index = 5;
+                        });
+                      },
                       child: Container(
                         height: 60,
                         width: 200,
+                        color:
+                            index == 5 ? Color.fromRGBO(87, 96, 113, 1) : null,
                         child: Center(
                             child: Stack(
                           children: <Widget>[
@@ -275,6 +354,7 @@ class HomeScreenState extends State<HomeScreen> {
             left: 0,
             width: 200,
           ),
+          loadUI(),
         ],
       ),
     );
