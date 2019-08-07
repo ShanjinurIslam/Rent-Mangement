@@ -10,7 +10,9 @@ class Flat extends StatefulWidget {
 
 class FlatState extends State<Flat> {
   int optionFlag = 0;
-  int selectitem = 1;
+  int selectitem = 0;
+
+  List<String> houseNames = ['Silverleaf','Hatemtower'] ;
 
   @override
   Widget build(BuildContext context) {
@@ -70,11 +72,11 @@ class FlatState extends State<Flat> {
                                 ),
                               ),
                               SizedBox(
-                                height: 30,
+                                height: 15,
                               ),
                               CupertinoButton(
                                 child: Text(
-                                  selectitem.toString(),
+                                  houseNames[selectitem],
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white,

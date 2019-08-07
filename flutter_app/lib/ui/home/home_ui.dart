@@ -1,4 +1,5 @@
 import 'package:example_flutter/ui/home/flats.dart';
+import 'package:example_flutter/ui/home/renters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'houses.dart';
@@ -27,9 +28,7 @@ class HomeScreenState extends State<HomeScreen> {
         return new Flat();
         break;
       case 3:
-        return Center(
-          child: Text('renter'),
-        );
+        return new Renter();
         break;
       case 4:
         return Center(
@@ -42,6 +41,7 @@ class HomeScreenState extends State<HomeScreen> {
         );
         break;
       default:
+        return Container();
     }
   }
 
@@ -258,7 +258,7 @@ class HomeScreenState extends State<HomeScreen> {
                               top: 20,
                               left: 80,
                               child: Text(
-                                'Renters',
+                                'Renters & Rents',
                                 style: TextStyle(
                                     fontWeight: FontWeight.normal,
                                     fontSize: 16,
