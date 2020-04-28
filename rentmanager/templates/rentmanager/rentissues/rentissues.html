@@ -5,9 +5,38 @@
 
 <div class="container-fluid">
     <h1 class="mt-4">Rent Issues</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Rent Issues</li>
-    </ol>
+    
+    <div class="row">
+        <div class="col-md-10">
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Number of Assignments: {{rentissues.count}}</li>
+            </ol>
+        </div>
+        <div class="col-md-2 mt-1">
+            <a href="{% url 'createrentissue' %}" class="btn btn-success float-right">New Rent Issue</a>
+        </div>
+    </div>
+    
+    {% for issue in rentissues %}
+
+    <div class="card">
+        <div class="card-header">
+            Issue {{issue.id}}
+        </div>
+        <div class="card-body">
+            
+            <h5 class="card-title">{{issue.name}}</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{issue.renter}}</li>
+                <li class="list-group-item">{{issue.flat}}</li>
+                <li class="list-group-item">{{issue.rent}}</li>
+              </ul>
+            <br/>
+            <a href="{% url 'viewrentissue' issue.id %}" class="btn btn-primary float-right">View</a>
+        </div>
+    </div>
+    <br/>
+    {% endfor %}
 </div>
 
 {% endblock %}

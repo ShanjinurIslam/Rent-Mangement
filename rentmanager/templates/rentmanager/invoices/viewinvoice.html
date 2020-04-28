@@ -1,0 +1,27 @@
+{% extends 'rentmanager/base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <h1 class="mt-4">{{instance.name}}</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Update information</li>
+    </ol>
+    {% load crispy_forms_tags %}
+    
+    <div class="mt-4">
+        <form method="post">
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+
+        <form action="{% url 'deleteinvoice' instance.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+        <br/>
+    </div>
+</div>
+
+{% endblock%}

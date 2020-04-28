@@ -5,9 +5,34 @@
 
 <div class="container-fluid">
     <h1 class="mt-4">Renters</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Renters</li>
-    </ol>
+    
+    <div class="row">
+        <div class="col-md-10">
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Number of Renters: {{renters.count}}</li>
+            </ol>
+        </div>
+        <div class="col-md-2 mt-1">
+            <a href="{% url 'createrenter' %}" class="btn btn-success float-right">New renter</a>
+        </div>
+    </div>
+    
+    {% for renter in renters %}
+
+    <div class="card">
+        <div class="card-header">
+            Renter #{{renter.id}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{renter.name}}</h5>
+            <p class="card-text">{{renter.address_line_1}},<br/> {% if renter.address_line_2 %} {{renter.address_line_2}},<br/> {% endif %} {{renter.city}}, {{renter.country}}<br/>
+                {{renter.mobile}}
+            </p>
+            <a href="{% url 'viewrenter' renter.id %}" class="btn btn-primary float-right">View</a>
+        </div>
+    </div>
+    <br/>
+    {% endfor %}
 </div>
 
 {% endblock %}

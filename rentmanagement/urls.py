@@ -33,7 +33,22 @@ urlpatterns = [
     path('deleteflat/<int:flat_id>',views.deleteflat,name='deleteflat'),
 
     path('renters/',views.renters,name='renters'),
+    path('createrenter/',views.createrenter,name='createrenter'),
+    path('renter/<int:renter_id>',views.viewrenter,name='viewrenter'),
+    path('deleterenter/<int:renter_id>',views.deleterenter,name='deleterenter'),
+
     path('rentissues/',views.rentissues,name='rentissues'),
-    path('payments/',views.payments,name='payments'),
+    path('createrentissue/',views.createrentissue,name='createrentissue'),
+    path('rentissue/<int:rentissue_id>',views.viewrentissue,name='viewrentissue'),
+    path('deleterentissue/<int:rentissue_id>',views.deleterentissue,name='deleterentissue'),
+
     path('invoices/',views.invoices,name='invoices'),
+    path('createinvoice/',views.createinvoice,name='createinvoice'),
+    path('invoice/<int:invoice_id>',views.viewinvoice,name='viewinvoice'),
+    path('deleteinvoice/<int:invoice_id>',views.deleteinvoice,name='deleteinvoice'),
+
+    path('payments/',views.payments,name='payments'),
+    path('createpayment/',views.createpayment,name='createpayment'),
+    path('payment/<int:payment_id>',views.viewpayment,name='viewpayment'),
+    path('deletepayment/<int:payment_id>',views.deletepayment,name='deletepayment'),
 ]

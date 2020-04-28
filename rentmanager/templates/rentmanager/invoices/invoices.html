@@ -5,9 +5,36 @@
 
 <div class="container-fluid">
     <h1 class="mt-4">Invoices</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Invoices</li>
-    </ol>
+    <div class="row">
+        <div class="col-md-10">
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Number of Invoices: {{invoices.count}}</li>
+            </ol>
+        </div>
+        <div class="col-md-2 mt-1">
+            <a href="{% url 'createinvoice' %}" class="btn btn-success float-right">New Invoice</a>
+        </div>
+    </div>
+
+    {% for invoice in invoices %}
+
+    <div class="card">
+        <div class="card-header">
+            Invoice #{{invoice.id}}
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{invoice.rent_issue}}</li>
+                <li class="list-group-item">{{invoice.month}},{{invoice.year}}</li>
+                <li class="list-group-item">{{invoice.total_payable}}</li>
+            </ul>
+            <br/>
+            <a href="{% url 'viewinvoice' invoice.id %}" class="btn btn-primary float-right">View</a>
+        </div>
+    </div>
+    <br />
+    {% endfor %}
+
 </div>
 
 {% endblock %}

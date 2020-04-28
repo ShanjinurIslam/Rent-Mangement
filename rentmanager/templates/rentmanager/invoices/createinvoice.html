@@ -1,0 +1,30 @@
+{% extends 'rentmanager/base.html' %}
+
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <h1 class="mt-4">Create Invoice</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Provide information</li>
+    </ol>
+    {% load crispy_forms_tags %}
+
+    {% if error %}
+
+        <div class="alert alert-danger" role="alert">
+            This is a danger alert—check it out!
+        </div>
+        
+    {% endif %}
+
+    <div class="mt-4">
+        <form method="post">
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+    </div>
+</div>
+
+{% endblock%}
